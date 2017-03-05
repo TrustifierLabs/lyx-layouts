@@ -20,3 +20,8 @@ Right now I haven't tested Mac OSX stuff, but give me a few days :-)
 ### On Windows
 
 * comming soon
+
+
+## Odds, Ends and Easter eggs
+
+* a vim lyx syntax file.
