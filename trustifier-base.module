@@ -1,0 +1,97 @@
+#\DeclareLyXModule{Trustifier Document}
+#DescriptionBegin
+#Provides Trustifier Logos and Fonts and other nice 
+#standard things.
+#DescriptionEnd
+
+Format 60
+
+
+AddToPreamble
+	\usepackage{xifthen}
+	\usepackage{fontspec}
+	\newfontfamily\arkitech{Arkitech}
+	\newfontfamily\roboto[
+		Ligatures=TeX,
+		UprightFont={* Light},
+		BoldFont={* Medium}
+	]{Roboto}
+	\newfontfamily\timeburner{TimeBurner}
+	\newfontfamily\neonmusic{NEON CLUB MUSIC}
+	\newfontfamily\times{Palatino Italic}
+
+	\setmainfont[UprightFont={* Light}]{Roboto}
+	\setmonofont{FreeMono}
+
+	\newcommand{\TrustifierLogo}{
+		{\arkitech trustifier}
+	}
+
+	\newcommand{\TrustifierProduct}[1] {
+		{\timeburner{#1}}
+	}
+	
+	\renewcommand*{\abstracttextfont}{\times}
+
+
+% --- Trustifier Specific Header/Footer style
+% move this to its own module later.
+
+	
+	\makepagestyle{tbBasePageStyle}
+	\makeheadrule {tbBasePageStyle}	{\textwidth}{\normalrulethickness}
+	\makefootrule {tbBasePageStyle}	{\textwidth}{\normalrulethickness}{\footruleskip}
+
+	\makeevenhead{tbBasePageStyle}	{\scshape\rightmark}{}{}
+	\makeoddhead{tbBasePageStyle}	{\leftmark}{}{\TrustifierLogo}
+
+	\makeevenfoot{tbBasePageStyle}	{\small \thepage}{\tiny \emph Copyright\ \textcopyright 2017 Trustifier Inc. All rights reserved.}{}
+	\makeoddfoot{tbBasePageStyle}	{\tiny \theauthor}{}{\small \thepage}
+
+	\makeatletter % because of memoir \@chapapp
+	\makepsmarks{tbBasePageStyle}{%
+		\nouppercaseheads
+		\createmark		{chapter}	{right}	{shownumber}{\@chapapp\ }{. \ }
+		\createmark		{section}	{right}	{shownumber}{}		 {. \ }
+		\createmark		{subsection}	{right}	{shownumber}{}		 {. \ }
+		\createmark		{subsubsection}	{right}	{shownumber}{}		 {. \ }
+		\createplainmark	{toc}		{both}	{\contentsname}
+		\createplainmark	{lof}		{both}	{\listfigurename}
+		\createplainmark	{lot}		{both}	{\listtablename}
+		\createplainmark	{bib}		{both}	{\bibname}
+		\createplainmark	{index}		{both}	{\indexname}
+		\createplainmark	{glossary}	{both}	{\glossaryname}
+	}
+	\makeatother
+	\setsecnumdepth{subsubsection}
+	\pagestyle{tbBasePageStyle}
+
+% --- End of Header and Footer
+
+EndPreamble
+
+InsetLayout "Flex:Trustifier Logo"
+	ContentAsLabel	true
+	LatexType	Command
+	LatexName	TrustifierLogo
+	LabelString     "Trustifier"
+	LabelType	Manual
+	LyxType 	custom
+	Decoration	Classic
+	Font
+		Color   blue
+		Family 	Sans
+		Shape	SmallCaps
+	EndFont
+End
+
+InsetLayout "Flex:Product Logo"
+	
+	CopyStyle	"Flex:Trustifier Logo"
+
+	LatexType	Command
+	LatexName	TrustifierProduct
+	LabelString     "Product:"
+
+End
+
