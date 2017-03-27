@@ -5,3 +5,11 @@
 *.lyx~
 *.lyx#
 ##### end LyX #####
+##### begin Vim #####
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+##### end Vim #####
