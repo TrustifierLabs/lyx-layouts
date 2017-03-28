@@ -4,15 +4,13 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass memoir
+\textclass trustifier-base
 \begin_preamble
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{lipsum}
 \end_preamble
 \use_default_options true
 \begin_modules
-logicalmkup
-customHeadersFooters
-enumitem
+trustifier-base
 \end_modules
 \maintain_unincluded_children false
 \language english
@@ -29,7 +27,7 @@ enumitem
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
-\graphics default
+\graphics xetex
 \default_output_format default
 \output_sync 0
 \bibtex_command default
@@ -79,7 +77,7 @@ enumitem
 \paragraph_indentation default
 \quotes_language english
 \papercolumns 1
-\papersides 2
+\papersides 1
 \paperpagestyle default
 \listings_params "breaklines=true,captionpos=b,frame=tb,language=bash,fillcolor={\color{white}},backgroundcolor={\color{cadet}}"
 \tracking_changes false
@@ -91,8 +89,72 @@ enumitem
 
 \begin_body
 
+\begin_layout Title
+Document Title
+\end_layout
+
+\begin_layout Author
+Ahmed Masud <ahmed.masud@trustifier.com>
+\end_layout
+
+\begin_layout Abstract
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lipsum[2]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+The Ultimate
+\end_layout
+
+\begin_layout Chapter*
+Introduction
+\end_layout
+
 \begin_layout Standard
-Foo, used for lyx test.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lipsum[3-25]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Test
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lipsum[50-100]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

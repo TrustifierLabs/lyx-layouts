@@ -1,2 +1,18 @@
 #% Do not delete the line below, configure depends on it.
+# \DeclareLaTeXClass[memoir]{Trustifier Research Book}
+# \DeclareCategory{Books}
+#
+# Heavily based on memoir because it's a very flexible style
+#
+#
+
+
+NoStyle Poemtitle
+NoStyle Poemtitle*
+
+AddToPreamble
+	\usepackage[usenames,dvipsnames]{xcolor}
+EndPreamble
+
+
 
