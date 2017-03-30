@@ -8,7 +8,7 @@
 \begin_preamble
 \usepackage{lipsum}
 \end_preamble
-\use_default_options true
+\use_default_options false
 \begin_modules
 trustifier-base
 \end_modules
@@ -135,6 +135,10 @@ lipsum[3-25]
 \end_inset
 
 
+\end_layout
+
+\begin_layout Part
+Another Part
 \end_layout
 
 \begin_layout Chapter
