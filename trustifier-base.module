@@ -7,98 +7,12 @@
 Format 60
 
 AddToPreamble
-
-	\usepackage{color,calc,graphicx,soul,fourier}
-	\definecolor{nicered}{rgb}{.647,.129,.149}
-	% -- setup core font families
-
-	\setromanfont[
-		Ligatures=TeX,
-		Scale=MatchLowercase
-	]{Palatino}
-	\setsansfont[
-		Ligatures=TeX,
-		UprightFont={* Light},
-		BoldFont={* Medium}
-	]{Roboto}
-	\setmonofont{FreeMono}
-
-
-
-	% -- define default family as sans
-	\renewcommand{\familydefault}{\sfdefault}
-
-
-	% -- Define some Trustifier specific fonts
-
-	\newcommand*{\TrustifierLogo}{
-		{\arkitech trustifier}
-	}
-	\newcommand*{\TrustifierProduct}[1] {
-		{\timeburner{#1}}
-	}
-	\newcommand*{\tbLogoMark}{\TrustifierLogo}
-	\renewcommand*{\abstracttextfont}{\times}
-
-	\newcommand{\tbSetLogoMark}[1]{
-		\ifthenelse{\isempty{#1}}{
-			\renewcommand*{\tbLogoMark}{\TrustifierLogo}
-		}
-		{
-			\renewcommand*{\tbLogoMark}{\TrustifierProduct {#1}}
-		}
-	}
-	% --- Trustifier Specific Header/Footer style
-
-	\makepagestyle{tbBasePageStyle}
-	\makeheadrule {tbBasePageStyle}	{\textwidth}{\normalrulethickness}
-	\makefootrule {tbBasePageStyle}	{\textwidth}{\normalrulethickness}{\footruleskip}
-
-	\makeevenhead{tbBasePageStyle}	{\scshape\rightmark}{}{}
-	\makeoddhead{tbBasePageStyle}	{\leftmark}{}{\tbLogoMark}
-
-	\makeevenfoot{tbBasePageStyle}	{\small \thepage}{\tiny \emph Copyright\ \textcopyright 2017 Trustifier Inc. All rights reserved.}{}
-	\makeoddfoot{tbBasePageStyle}	{\tiny \theauthor}{}{\small \thepage}
-
-	\makeatletter % because of memoir \@chapapp
-	\makepsmarks{tbBasePageStyle}{%
-		\nouppercaseheads
-		\createmark		{chapter}	{right}	{shownumber}{\@chapapp\ }{. \ }
-		\createmark		{section}	{right}	{shownumber}{}		 {. \ }
-		\createmark		{subsection}	{right}	{shownumber}{}		 {. \ }
-		\createmark		{subsubsection}	{right}	{shownumber}{}		 {. \ }
-		\createplainmark	{toc}		{both}	{\contentsname}
-		\createplainmark	{lof}		{both}	{\listfigurename}
-		\createplainmark	{lot}		{both}	{\listtablename}
-		\createplainmark	{bib}		{both}	{\bibname}
-		\createplainmark	{index}		{both}	{\indexname}
-		\createplainmark	{glossary}	{both}	{\glossaryname}
-	}
-	\makeatother
-	\setsecnumdepth{subsubsection}
-	\pagestyle{tbBasePageStyle}
-
-
-	% -- pick a pretty part/chapter format
-
-	% -- lines/paragraphs and other goodies
-	\OnehalfSpacing
-	\setlength{\parskip}{2.5em}
-
-
-	% -- document margins
-
-	\newcommand{\tbDocLeftMargin}{4.5cm}
-	\newcommand{\tbDocRightMargin}{2.5cm}
-	\newcommand{\tbDocTopMargin}{3cm}
-	\newcommand{\tbDocBottomMargin}{3cm}
-	\setlrmarginsandblock{\tbDocLeftMargin}{\tbDocRightMargin}{*} % Left and right margin
-	\setulmarginsandblock{\tbDocTopMargin}{\tbDocBottomMargin}{*}  % Upper and lower margin
-	\checkandfixthelayout
-
 EndPreamble
 
-Input trustifier-base-chapter-style.inc
+Input trustifier-base-fonts.inc
+Input trustifier-base-logos.inc
+Input trustifier-base-styles.inc
+Input trustifier-base-page-layout.inc
 
 
 InsetLayout "Flex:Trustifier Logo"
@@ -126,21 +40,4 @@ InsetLayout "Flex:Product Logo"
 End
 
 
-Style ProductLogo
-	Category 	Trustifier
-	LatexType 	Command
-	LatexName 	tbSetLogoMark
-
-	LabelType	Static
-	LabelSep	xx
-	LabelString 	"Product-Logo:"
-	LeftMargin	Product-Logo:xx
-	InTitle		1
-	InPreamble	1
-
-	LabelFont
-		Color 	Blue
-	EndFont
-End
-
-
+# vim:filetype=lyx-layout
