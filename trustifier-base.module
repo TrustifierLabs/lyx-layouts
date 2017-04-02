@@ -1,3 +1,4 @@
+#% Do not delete the lines below LyX depends on them
 #\DeclareLyXModule{Trustifier Document}
 #DescriptionBegin
 #Provides Trustifier Logos and Fonts and other nice 
@@ -12,7 +13,6 @@ Input trustifier-base-fonts.inc
 Input trustifier-base-logos.inc
 Input trustifier-base-styles.inc
 Input trustifier-base-page-layout.inc
-
 
 InsetLayout "Flex:Trustifier Logo"
 	ContentAsLabel	true
@@ -29,7 +29,7 @@ InsetLayout "Flex:Trustifier Logo"
 End
 
 InsetLayout "Flex:Product Logo"
-	
+
 	CopyStyle	"Flex:Trustifier Logo"
 
 	LatexType	Command
