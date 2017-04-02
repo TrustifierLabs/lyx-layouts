@@ -3,11 +3,10 @@
 #Provides Trustifier Logos and Fonts and other nice 
 #standard things.
 #DescriptionEnd
+#EndLyXDeclaration
 
 Format 60
 
-AddToPreamble
-EndPreamble
 
 Input trustifier-base-fonts.inc
 Input trustifier-base-logos.inc
@@ -38,6 +37,3 @@ InsetLayout "Flex:Product Logo"
 	LabelString     "Product:"
 
 End
-
-
-# vim:filetype=lyx-layout

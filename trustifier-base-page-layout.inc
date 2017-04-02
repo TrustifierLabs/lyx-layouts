@@ -1,3 +1,4 @@
+#LyXModuleInclude
 # page layouts
 
 Format 60
@@ -48,4 +49,3 @@ AddToPreamble
 
 EndPreamble
 
-# vim:filetype=tex

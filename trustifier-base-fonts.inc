@@ -1,4 +1,5 @@
-# trustifier-base fonts
+#LyXModuleInclude
+#trustifier-base fonts
 
 Format 60
 
@@ -16,4 +17,3 @@ AddToPreamble
 	% -- define default family as sans
 	\renewcommand{\familydefault}{\sfdefault}
 EndPreamble
-# vim:syntax=tex
