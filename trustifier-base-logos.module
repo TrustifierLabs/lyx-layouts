@@ -1,0 +1,9 @@
+#\DeclareLyXModule{Trustifier Logos}
+#BeginDescription
+#Trustifier fonts and logos
+#EndDescription
+
+Format 60
+Input trustifier-base-fonts.inc
+Input trustifier-base-logos.inc
+

@@ -1,0 +1,8 @@
+#\DeclareLyXModule{Trustifier Use-case & Requirements}
+#DescriptionBegin
+#Adds use-case and requirements sections to a document
+#DescriptionEnd
+
+Format 60
+Input srs-usecase.inc
+Input srs-requirement.inc

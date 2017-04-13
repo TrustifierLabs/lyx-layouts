@@ -1,0 +1,75 @@
+#% Do not delete the line below; configure depends on this 
+#\DeclareLyXModule{Trustifier Syllabus}
+#DescriptionBegin
+# 2017/04/02
+# Trustifier Syllabus Handout module 
+# defines all the layout types used in Trustifier Syllabii
+#DescriptionEnd
+
+Format 60
+
+NoStyle Epigraph
+NoStyle Legend
+NoStyle Abstract
+NoStyle Quote
+NoStyle Quotation
+NoStyle Bibliography
+
+
+Style Course
+	Preamble
+		\newcommand\tbCourseName[2]{\paragraph*{#1 \noun{#2}}}
+	EndPreamble
+
+	Category	Syllabus
+	Align 		Left
+	NewLine		true
+
+	LatexType	Command
+	LatexName	tbCourseName
+	LabelString 	"Course:"
+	LeftMargin	"Course:xx"
+	LabelSep	"xx"
+	LabelType	Static
+	KeepEmpty	true
+	RefPrefix	course
+	NextNoIndent	true
+
+	TopSep		1.0
+	BottomSep	0.0
+	ParSep		0.0
+
+	TocLevel	2
+	Font
+		Color 	foreground
+		Size	normal
+		Family	Roman
+		Shape	SmallCaps
+		Series	Bold
+		Misc	No_Emph
+		Misc 	No_Noun
+		Misc 	No_Bar
+	EndFont
+	LabelFont
+		Color 	green
+		Size 	small
+		Shape	SmallCaps
+	EndFont
+	Argument 1
+		LabelString     "course-code"
+		Mandatory	1
+		AutoInsert	1
+		IsTocCaption	1
+		Font
+			Size	normal
+			Family	Roman
+			Shape	SmallCaps
+			Series	Bold
+		EndFont
+		LabelFont
+			Color purple
+			Size  small
+		EndFont	
+		Decoration Conglomerate
+	EndArgument
+End

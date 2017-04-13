@@ -2,7 +2,7 @@ Format 60
 
 AddToPreamble
 	% -- Define some Trustifier specific fonts
-
+	\usepackage{trustifier-fonts}
 	\newcommand*{\TrustifierLogo}{
 		{\arkitech trustifier}
 	}

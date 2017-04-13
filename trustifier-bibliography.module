@@ -1,0 +1,10 @@
+#\DeclareLyXModule{Trustifier Bibliography Manager}
+#DescriptionBegin
+#Provides Trustifier Bibliography Manager
+#DescriptionEnd
+
+Format 60
+AddToPreamble
+	\usepackage[style=alphabetic,backend=biber,sorting=ynt]{biblatex}
+	\usepackage{hyperref}
+EndPreamble

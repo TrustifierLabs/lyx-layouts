@@ -9,15 +9,7 @@
 \usepackage{babel}
 \usepackage{xifthen}
 \usepackage{fontspec}
-
-%-- Standard fonts for Trustifier
-
-\newfontfamily\arkitech{Arkitech}
-\newfontfamily\roboto{Roboto}
-
-\newfontfamily\timeburner{TimeBurner}
-\newfontfamily\neonmusic{NEON CLUB MUSIC}
-\newfontfamily\times{Palatino Italic}
+\usepackage{trustifier-fonts}
 
 
 % --- End of Header and Footer

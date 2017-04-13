@@ -1,0 +1,9 @@
+#%Do not delete the lines below, LyX depends on it.
+#\DeclareLaTeXClass[trustifier-base]{Trustifier Syllabus}
+#\DeclareCategory{Brochures}
+#Trustifier Syllabus Brochure
+
+Format 60
+
+Input trustifier-base.layout
+DefaultModule trustifier-syllabus.module

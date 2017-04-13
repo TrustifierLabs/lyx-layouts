@@ -9,8 +9,28 @@
 Format 60
 
 
+NoStyle Verse
+NoStyle Poemtitle
+NoStyle Poemtitle*
+
 Input trustifier-base-fonts.inc
 Input trustifier-base-logos.inc
+
+AddToPreamble
+	\setromanfont[
+		Ligatures=TeX,
+		Scale=MatchLowercase
+	]{Palatino}
+	\setsansfont[
+		Ligatures=TeX,
+		UprightFont={* Light},
+		BoldFont={* Medium}
+	]{Roboto}
+	\setmonofont{FreeMono}
+	% -- define default family as sans
+	\renewcommand{\familydefault}{\sfdefault}
+EndPreamble
+
 Input trustifier-base-styles.inc
 Input trustifier-base-page-layout.inc
 
