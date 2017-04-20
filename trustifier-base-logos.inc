@@ -3,23 +3,29 @@ Format 60
 AddToPreamble
 	% -- Define some Trustifier specific fonts
 	\usepackage{trustifier-fonts}
-	\newcommand*{\TrustifierLogo}{
-		{\arkitech trustifier}
-	}
-	\newcommand*{\TrustifierProduct}[1] {
-		{\timeburner{#1}}
-	}
-	\newcommand*{\tbLogoMark}{\TrustifierLogo}
+	\usepackage{tikz}
+	\providecommand*{\trustifier}{%
+		{\arkitech{trustifier}}%
+	}%
+	\providecommand*{\TrustifierLogo}{%
+		\begin{tikzpicture}
+			\node[text width=3cm,text=black,font=\arkitech,align=center] at (0,0) {trustifier};
+		\end{tikzpicture}
+	}%
+	\providecommand*{\TrustifierProduct}[1]{%
+		{\timeburner{#1}}%
+	}%
+	\providecommand*{\tbLogoMark}{\trustifier}
+	\providecommand*{\abstracttextfont}{\times}
 	\renewcommand*{\abstracttextfont}{\times}
-
-	\newcommand{\tbSetLogoMark}[1]{
-		\ifthenelse{\isempty{#1}}{
-			\renewcommand*{\tbLogoMark}{\TrustifierLogo}
-		}
-		{
-			\renewcommand*{\tbLogoMark}{\TrustifierProduct {#1}}
-		}
-	}
+	\providecommand*{\tbSetLogoMark}[1]{%
+		\ifthenelse{\isempty{#1}}{%
+			\reprovidecommand*{\tbLogoMark}{\TrustifierLogo}%
+		}%
+		{%
+			\reprovidecommand*{\tbLogoMark}{\TrustifierProduct{#1}}%
+		}%
+	}%
 	% --- Trustifier Specific Header/Footer style
 EndPreamble
 
